@@ -14,7 +14,6 @@ Doctor.prototype.searchDoctors = function(searchTerm, callback) {
   $.get(url)
     .then(function(result) {
       // each doctor at:
-      console.log(result.data);
       result.data.forEach(function(foundDoctor) {
         // things to display: Practice Name .practices.name
         var doctor = {
