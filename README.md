@@ -2,8 +2,13 @@
 
 Doctor Lookup is a simple app built to highlight the basics of asynchronous AJAX API calls.
 
-**Doctor Lookup** will let you find medical providers in a given area that by searching their information on **BetterDoctor.com**.  But can't we already do this through **BetterDoctor's** existing (and quite polished) site?  Yes!  The real fun of **Doctor Lookup** is looking at the code under the hood.  This app implements the **BetterDoctor** API, serving as a good introductoon to using API's, parsing their returns, and building a UI.
+**Doctor Lookup** will let you find medical providers in a given area that by searching their information on **BetterDoctor.com**.  But can't we already do this through **BetterDoctor's** existing (and quite polished) site?  Yes!  The real fun of **Doctor Lookup** is looking at the code under the hood.  This app implements the **BetterDoctor** API, serving as a good introduction to using API's, parsing their returns, and building a UI.
 **Doctor Lookup** is also an example of how to set up and develop a project using **Node Package Manager (NPM)** , **Bower**, and **Gulp** task runner.
+
+## Application Behavior
+
+* Application will be straighforward from the user perspective.  It takes one input, a text string in the search input field.  The app will then return a list of doctors whose files contain that text string somewhere in their BetterDoctor entry.
+* (consider adding variable number of results, getting next results, maybe practice search)
 
 ## Installation
 
@@ -61,6 +66,7 @@ Step 6: **Enter whatever horrible medical affliction you suffer into the form an
 *   Browserify (manage requirements between files in app logic)
 *   Gulp concat (concatenation of multiple files)
 *   Gulp-uglify (Minification of files for production build)(also, saying Uglify is fun)
+*   Gulp-Util (Creates environment variables)
 *   Vinyl Source Stream (Assists with paths in concatenation)
 *   JS Hint (javascript linter)
 *   Sass (CSS compiler)

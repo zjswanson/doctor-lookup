@@ -1,0 +1,21 @@
+{
+  "name": "doctor-lookup",
+  "description": "Doctor search tool using BetterDoctor API",
+  "main": "index.js",
+  "authors": [
+    "Zach Swanson"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.0",
+    "bootstrap": "^3.3.7"
+  }
+}
