@@ -18,9 +18,8 @@ Doctor.prototype.searchDoctors = function(searchTerm, callback) {
       result.data.forEach(function(foundDoctor) {
         // things to display: Practice Name .practices.name
         var doctor = {
-          'practice name': foundDoctor.practices[0].name,
-          'first name': foundDoctor.profile.first_name,
-          'last name': foundDoctor.profile.last_name,
+          'practiceName': foundDoctor.practices[0].name,
+          'name': foundDoctor.profile.first_name + foundDoctor.profile.last_name,
           'bio': foundDoctor.profile.bio,
           'image': foundDoctor.profile.image_url,
           'specialty': foundDoctor.specialties[0].name

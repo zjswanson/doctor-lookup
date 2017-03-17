@@ -9,22 +9,31 @@
   </head>
   <body>
 
-    <!--Hey Zach!  Remember to do mobile first styling!  -->
     <div class="container">
       <div class="well">
         <h1>Doctor Lookup</h1>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <div id="input">
-            <label for="search">Enter a medical condition to find doctors</label>
-            <input type="text" name="search" id="search">
-            <button type="button" id="search-button">Search!</button>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Doctor Search</h3>
+            </div>
+            <div class="panel-body">
+              <div id="input">
+                <label for="search">Medical Condition</label>
+                <input type="text" name="search" id="search">
+                <button type="button" id="search-button">Search!</button>
+                <p>
+                  Search Tips: If you aren't getting results, try seraching by medical specialty, doctor's name, or anything else!  This utility read's the doctor's whole education, bio, and practice description!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-8">
           <div id="display">
-
+            <h2>Results</h2>
           </div>
         </div>
       </div>
