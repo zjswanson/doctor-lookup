@@ -10,9 +10,28 @@ Doctor.prototype.searchDoctors = function(searchTerm, callback) {
       '&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=' +
       encodeURI(apiKey);
 
+  var searchResults =[];
   $.get(url)
     .then(function(result) {
-       callback(result);
+      // each doctor at:
+      console.log(result.data);
+      result.data.forEach(function(foundDoctor) {
+        // things to display: Practice Name .practices.name
+        var doctor = {
+          'practice name': foundDoctor.practices[0].name,
+          'first name': foundDoctor.profile.first_name,
+          'last name': foundDoctor.profile.last_name,
+          'bio': foundDoctor.profile.bio,
+          'image': foundDoctor.profile.image_url,
+          'specialty': foundDoctor.specialties[0].name
+        };
+        searchResults.push(doctor);
+      });
+
+     })
+     .then(function() {
+
+       callback(searchResults);
      })
     .fail(function(error){
        console.log("fail");
