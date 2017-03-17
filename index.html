@@ -14,27 +14,38 @@
         <h1>Doctor Lookup</h1>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Doctor Search</h3>
-            </div>
-            <div class="panel-body">
-              <div id="input">
-                <label for="search">Medical Condition</label>
-                <input type="text" name="search" id="search">
-                <button type="button" id="search-button">Search!</button>
-                <p>
-                  Search Tips: If you aren't getting results, try seraching by medical specialty, doctor's name, or anything else!  This utility read's the doctor's whole education, bio, and practice description!
-                </p>
-              </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Doctor Search</h3>
+          </div>
+          <div class="panel-body">
+            <div id="input">
+              <label for="search">Medical Condition</label>
+              <input type="text" name="search" id="search"><br>
+              <select class="" name="location" id="locaiton">
+                <option value="45.5231,-122.6765,">Portland</option>
+                <option value="45.4917,-122.4765,">Gresham</option>
+                <option value="45.4248,-122.8245,">Tigard</option>
+                <option value="45.4248,-122.8245,">Beaverton</option>
+              </select>
+              <label for="radius">Search Radius</label>
+              <input type="radio" name="radius" value="5" checked>5 Miles<br>
+              <input type="radio" name="radius" value="10">10 Miles<br>
+              <input type="radio" name="radius" value="25">25 Miles <br>
+              <input type="radio" name="radius" value="100">100 Miles<br>
+              <label for="number">Number of Results (max 100)</label>
+              <input type="number" name="number" id="number">
+              <button type="button" id="search-button">Search!</button>
+              <p>
+                Search Tips: If you aren't getting results, try seraching by medical specialty, doctor's name, or anything else!  This utility read's the doctor's whole education, bio, and practice description!
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <h2>Results</h2>
-          <div id="display">
-          </div>
+      </div>
+      <div class="row">
+        <h2>Results</h2>
+        <div id="display">
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ var displayDoctorList = function(doctorList) {
   if (doctorList.length > 0) {
     doctorList.forEach(function(doctor) {
       htmlString +=
+      "<div class='col-md-6'>"+
       "<div class='panel panel-primary'>" +
       "<div class='panel-heading'>" +
       "<h3 class='panel-title'>"+ doctor.name + "</h3>" +
@@ -22,6 +23,7 @@ var displayDoctorList = function(doctorList) {
       doctor.bio +
       "</p>" +
       "</div>" +
+      "</div>" +
       "</div>";
     });
   } else {
@@ -33,9 +35,19 @@ var displayDoctorList = function(doctorList) {
 $(document).ready(function() {
 
   $("#search-button").click(function() {
-    var searchTerm = $("#search").val();
+    //Build Search array (term, location, radius, number)
+    var search= {
+      'term': $("#search").val(),
+      'location': $('select option:selected').val(),
+      'radius': $('input[type=radio]:checked').val(),
+      'number': $('#number').val()
+    };
+    if (search.number <= 0) {
+      search.number = 1;
+    }
+    console.log(search);
     var doctor = new Doctor();
-    doctor.searchDoctors(searchTerm, displayDoctorList);
+    doctor.searchDoctors(search, displayDoctorList);
   });
 
 
