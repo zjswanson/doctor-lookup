@@ -9,10 +9,11 @@
   </head>
   <body>
 
+    <div class="jumbotron jumbotron-fluid">
+      <h1>PDX Doctor Lookup</h1>
+      <h3>Find a Doctor in the Portland Area!</h3>
+    </div>
     <div class="container">
-      <div class="well">
-        <h1>Doctor Lookup</h1>
-      </div>
       <div class="row">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -21,23 +22,30 @@
           <div class="panel-body">
             <div id="input">
               <label for="search">Medical Condition</label>
-              <input type="text" name="search" id="search"><br>
-              <select class="" name="location" id="locaiton">
+              <input class="form-control" type="text" name="search" id="search" value="Back Problem">
+              <label for="location">Search Location</label>
+              <select class="form-control" name="location" id="location">
                 <option value="45.5231,-122.6765,">Portland</option>
                 <option value="45.4917,-122.4765,">Gresham</option>
                 <option value="45.4248,-122.8245,">Tigard</option>
                 <option value="45.4248,-122.8245,">Beaverton</option>
               </select>
-              <label for="radius">Search Radius</label>
-              <input type="radio" name="radius" value="5" checked>5 Miles<br>
-              <input type="radio" name="radius" value="10">10 Miles<br>
-              <input type="radio" name="radius" value="25">25 Miles <br>
-              <input type="radio" name="radius" value="100">100 Miles<br>
-              <label for="number">Number of Results (max 100)</label>
-              <input type="number" name="number" id="number">
-              <button type="button" id="search-button">Search!</button>
+              <label for="radius">Search Raduis</label>
+              <select class="form-control" name="radius" id="radius">
+                <option value="10">10 Miles</option>
+                <option value="25">25 Miles</option>
+                <option value="50">50 Miles</option>
+                <option value="100">100 Miles</option>
+              </select>
+              <label for="number">Number of Results</label>
+              <select class="form-control" name="number" id="number">
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <button type="button" id="search-button" class="btn">Search!</button>
               <p>
-                Search Tips: If you aren't getting results, try seraching by medical specialty, doctor's name, or anything else!  This utility read's the doctor's whole education, bio, and practice description!
+                Search Tip: If you aren't getting results, try searching by medical specialty, doctor's name, or anything else!  This utility will read info about doctor's education, bio, and practice description to bring you results!
               </p>
             </div>
           </div>

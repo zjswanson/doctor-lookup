@@ -38,9 +38,9 @@ $(document).ready(function() {
     //Build Search array (term, location, radius, number)
     var search= {
       'term': $("#search").val(),
-      'location': $('select option:selected').val(),
-      'radius': $('input[type=radio]:checked').val(),
-      'number': $('#number').val()
+      'location': $('#location option:selected').val(),
+      'radius': $('#radius option:selected').val(),
+      'number': $('#number option:selected').val()
     };
     if (search.number <= 0) {
       search.number = 1;

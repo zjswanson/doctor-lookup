@@ -20,7 +20,7 @@ Doctor.prototype.searchDoctors = function(search, callback) {
         // things to display: Practice Name .practices.name
         var doctor = {
           'practiceName': foundDoctor.practices[0].name,
-          'name': foundDoctor.profile.first_name + foundDoctor.profile.last_name,
+          'name': foundDoctor.profile.first_name +" "+ foundDoctor.profile.last_name,
           'bio': foundDoctor.profile.bio,
           'image': foundDoctor.profile.image_url,
           'specialty': foundDoctor.specialties[0].name
