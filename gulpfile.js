@@ -23,7 +23,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var buildProduction = utilities.env.production;
 
-gulp.task('jsBrowserify', ['concatInterface'], funciton()  {
+gulp.task('jsBrowserify', ['concatInterface'], function()  {
   return browserify({ entries: ["./tmp/allConcat.js"] })
     .bundle()
     .pipe(source('app.js'))
@@ -36,7 +36,7 @@ gulp.task('concatInterface', function() {
   .pipe(gulp.dest('./tmp'));
 });
 
-gulp.task('minifyScripts', ['jsBroswerify'], function(){
+gulp.task('minifyScripts', ['jsBrowserify'], function(){
   return gulp.src('./build/js/app.js')
   .pipe(uglify())
   .pipe(gulp.dest('./build/js'));
@@ -46,7 +46,7 @@ gulp.task('build', ['clean'], function() {
   if (buildProduction) {
     gulp.start('minifyScripts');
   } else {
-    gulp.start('jsBroswerify');
+    gulp.start('jsBrowserify');
   }
   gulp.start('bower');
   gulp.start('cssBuild');
@@ -75,7 +75,7 @@ gulp.task('bowerCSS', function() {
   .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('bowerBuild', ['bowerJS','bowerCSS']);
+gulp.task('bower', ['bowerJS','bowerCSS']);
 
 gulp.task('serve', function() {
   browserSync.init({
@@ -91,11 +91,11 @@ gulp.task('serve', function() {
   gulp.watch(['scss/*.scss'], ['cssBuild']);
 });
 
-gulp.task('jsBuild', ['jsBrowserify', 'jshint'] function() {
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function() {
   browserSync.reload();
 });
 
-gulp.task('bowerBuild', ['bower'] function() {
+gulp.task('bowerBuild', ['bower'],  function() {
   browserSync.reload();
 });
 
