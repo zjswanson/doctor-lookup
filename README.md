@@ -7,8 +7,8 @@ Doctor Lookup is a simple app built to highlight the basics of asynchronous AJAX
 
 ## Application Behavior
 
-* Application will be straighforward from the user perspective.  It takes one input, a text string in the search input field.  The app will then return a list of doctors whose files contain that text string somewhere in their BetterDoctor entry.
-* (consider adding variable number of results, getting next results, maybe practice search)
+* The application is fairly straightforward from the user perspective.  It takes one primary input, a text string in the search input field.  The user may further customize by changing the municipality of the search, radius, and number of results returned/  The app will then return a list of doctors whose files contain that text string somewhere in their BetterDoctor entry.
+
 
 ## Installation
 
@@ -57,7 +57,7 @@ Step 6: **Enter whatever horrible medical affliction you suffer into the form an
 
 ## Known Bugs
 
-*
+* Not exactly a bug, but the data set doesn't actually do a good job of searching by by medical condition.  The API seems to perform a text search over the doctor's bio and practice description, many of which only contain general descriptions of their practice areas.  For example, "toothache" will not return any results when searching in the Portland area. 
 
 ## Technologies Used
 

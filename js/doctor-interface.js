@@ -5,8 +5,11 @@ var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctorList = function(doctorList) {
   $("#display").empty();
+  if (typeof doctorList === "string") {
+    $("#display").append(doctorList);
+    return;
+  }
   var htmlString = "";
-  console.log(doctorList);
   if (doctorList.length > 0) {
     doctorList.forEach(function(doctor) {
       htmlString +=
@@ -45,7 +48,6 @@ $(document).ready(function() {
     if (search.number <= 0) {
       search.number = 1;
     }
-    console.log(search);
     var doctor = new Doctor();
     doctor.searchDoctors(search, displayDoctorList);
   });

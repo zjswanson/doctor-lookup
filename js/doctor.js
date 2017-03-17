@@ -34,7 +34,8 @@ Doctor.prototype.searchDoctors = function(search, callback) {
        callback(searchResults);
      })
     .fail(function(error){
-       console.log("fail");
+      searchResults = "There seems to have been a problem with the search request.  Please try again."
+        callback(searchResults);
      });
 
 };
